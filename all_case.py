@@ -5,10 +5,6 @@
 import unittest
 import HTMLTestRunner
 import time,os,datetime
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.mime.image import MIMEImage
 
 
 # 取test_case文件夹下所有用例文件

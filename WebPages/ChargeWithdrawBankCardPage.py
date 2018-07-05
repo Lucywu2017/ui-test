@@ -5,11 +5,9 @@
 # 充值、提现、银行卡管理相关功能方法
 
 from WebPages.BasePage import BasePage
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import select
 from SelementLocate import PortalObject
 import time
-
 
 
 class ChargeWithdrawBankCardPage(BasePage):
@@ -72,7 +70,7 @@ class ChargeWithdrawBankCardPage(BasePage):
             self.driver.find_element(*PortalObject.autoPop).is_displayed()
             return True
         except Exception:
-            return false
+            return False
 
     def enter_pay_password_in_withdraw(self, password):
         """提现页面的支付密码输入框"""

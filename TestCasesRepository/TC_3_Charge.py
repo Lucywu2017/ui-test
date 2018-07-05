@@ -8,7 +8,7 @@ import CommonLibrary.CommonConfiguration as cc
 from CommonLibrary.LogUtility import LogUtility
 from CommonLibrary.TestReport import TestReport
 from CommonLibrary.TestCaseInfo import TestCaseInfo
-from WebPages.ChargeWithdrawBankCardPage import ChargeAndWithdrawBankCardPage
+from WebPages.ChargeWithdrawBankCardPage import ChargeWithdrawBankCardPage
 from ConstantLocate import Constant
 
 
@@ -23,28 +23,28 @@ class TestCharge(unittest.TestCase):
     def test_charge(self):
         try:
             # Step1: 登录
-            chargeAndWithdrawBankCardPage = ChargeAndWithdrawBankCardPage()
-            chargeAndWithdrawBankCardPage.open(Constant.LoginURL)
-            chargeAndWithdrawBankCardPage.login(Constant.UserName, Constant.Password)
+            chargeWithdrawBankCardPage = ChargeWithdrawBankCardPage()
+            chargeWithdrawBankCardPage.open(Constant.LoginURL)
+            chargeWithdrawBankCardPage.login(Constant.UserName, Constant.Password)
 
             # Step2: 充值前去我的账户页面查看可用余额
-            chargeAndWithdrawBankCardPage.click_my_account_on_left_panel()
-            balanceInAccount = chargeAndWithdrawBankCardPage.get_balance_in_account()
+            chargeWithdrawBankCardPage.click_my_account_on_left_panel()
+            balanceInAccount = chargeWithdrawBankCardPage.get_balance_in_account()
 
             # Step3: 充值 - 网银
-            chargeAndWithdrawBankCardPage.click_charge_in_account()
-            chargeAndWithdrawBankCardPage.send_charge_withdraw_amount(1800)
-            chargeAndWithdrawBankCardPage.click_submit_charge()
-            chargeAndWithdrawBankCardPage.click_online_pay_button()
-            chargeAndWithdrawBankCardPage.click_go_pay_online()
-            chargeAndWithdrawBankCardPage.close_driver()
-            chargeAndWithdrawBankCardPage.switch_to_window('Insert')
-            chargeAndWithdrawBankCardPage.click_attestation_success()
-            chargeAndWithdrawBankCardPage.accept_alert()
+            chargeWithdrawBankCardPage.click_charge_in_account()
+            chargeWithdrawBankCardPage.send_charge_withdraw_amount(1800)
+            chargeWithdrawBankCardPage.click_submit_charge()
+            chargeWithdrawBankCardPage.click_online_pay_button()
+            chargeWithdrawBankCardPage.click_go_pay_online()
+            chargeWithdrawBankCardPage.close_driver()
+            chargeWithdrawBankCardPage.switch_to_window('Insert')
+            chargeWithdrawBankCardPage.click_attestation_success()
+            chargeWithdrawBankCardPage.accept_alert()
 
             # Step4: 充值后去我的账户页面查看可用余额
-            chargeAndWithdrawBankCardPage.click_my_account_on_left_panel()
-            currentBalanceInAccount = chargeAndWithdrawBankCardPage.get_balance_in_account()
+            chargeWithdrawBankCardPage.click_my_account_on_left_panel()
+            currentBalanceInAccount = chargeWithdrawBankCardPage.get_balance_in_account()
 
             #校验充值前后的可用余额
             self.assertEqual(balanceInAccount.__add__(1800.00), currentBalanceInAccount)
@@ -58,7 +58,7 @@ class TestCharge(unittest.TestCase):
         finally:
             self.test_case_info.end_time = cc.get_current_time()
             self.test_case_info.seconds_duration = cc.time_diff(self.test_case_info.start_time, self.test_case_info.end_time)
-            chargeAndWithdrawBankCardPage.close_driver()
+            chargeWithdrawBankCardPage.close_driver()
 
     def tearDown(self):
         self.test_report.write_html()

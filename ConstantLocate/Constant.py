@@ -6,12 +6,12 @@
 #qa - portal
 BaseURL = 'https://bn.lizgo.cn'
 LoginURL = 'https://bn.lizgo.cn/auth/login'
-UserName = '17044444440'
+UserName = '15910887540'
 Password = '123456789'
 
 #注册-实名认证-绑卡-设置支付密码
 RegisterURL = 'https://bn.lizgo.cn/auth/register'
-NewUser = '15910887540'
+NewUser = '18510292029'
 RealnameCertURL = 'https://bn.lizgo.cn/profile/realname-auth'
 Realname = '自动化'
 IdCard = '110116201801121957'

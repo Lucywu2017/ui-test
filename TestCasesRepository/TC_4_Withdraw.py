@@ -8,7 +8,7 @@ import CommonLibrary.CommonConfiguration as cc
 from CommonLibrary.LogUtility import LogUtility
 from CommonLibrary.TestReport import TestReport
 from CommonLibrary.TestCaseInfo import TestCaseInfo
-from WebPages.ChargeWithdrawBankCardPage import ChargeAndWithdrawBankCardPage
+from WebPages.ChargeWithdrawBankCardPage import ChargeWithdrawBankCardPage
 from ConstantLocate import Constant
 
 
@@ -23,7 +23,7 @@ class TestWithdraw(unittest.TestCase):
     def test_withdraw(self):
         try:
             # Step1: 登录
-            chargeWithdrawBankCardPage = ChargeAndWithdrawBankCardPage()
+            chargeWithdrawBankCardPage = ChargeWithdrawBankCardPage()
             chargeWithdrawBankCardPage.open(Constant.LoginURL)
             chargeWithdrawBankCardPage.login(Constant.UserName, Constant.Password)
 

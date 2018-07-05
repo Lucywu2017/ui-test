@@ -98,12 +98,8 @@ class TestRegisterRealNameBindCardSetPassword(unittest.TestCase):
 
 
         try:
-
-
-
             # All case is passed
             self.test_case_info.result = "Pass"
-
 
 
         except Exception as err:
@@ -112,7 +108,7 @@ class TestRegisterRealNameBindCardSetPassword(unittest.TestCase):
         finally:
             self.test_case_info.end_time = cc.get_current_time()
             self.test_case_info.seconds_duration = cc.time_diff(self.test_case_info.start_time, self.test_case_info.end_time)
-            certificationPage.close_driver()
+            newUserCertificationPage.close_driver()
         pass
 
     def tearDown(self):

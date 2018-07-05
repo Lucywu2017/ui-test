@@ -10,13 +10,12 @@ import os
 #     print(discover)
 #     return discover
 
-from TestCasesRepository import TestRegisterRealNameBindCardSetPassword
+from TestCasesRepository import TC_1_NewUserCertificate, TC_2_Login, TC_3_Charge, TC_4_Withdraw, TC_6_UnbindCard, TC_7_BindCard
 def suite():
     test_suite = unittest.TestSuite()
-    test_suite.addTest(TestRegisterRealNameBindCardSetPassword('test_registerRealNameBindCardSetPassword.py'))
-    test_suite.addTest(TestLogin('test_login.py'))
-    test_suite.addTest(TestCharge('test_charge.py'))
-    test_suite.addTest(TestWithdraw('test_withdraw.py'))
+    test_suite.addTest(TC_2_Login.TestLogin('test_login.py'))
+    test_suite.addTest(TC_3_Charge.TestCharge('test_charge.py'))
+    test_suite.addTest(TC_4_Withdraw.TestWithdraw('test_withdraw.py'))
     return test_suite
 
 if __name__ == '__main__':
