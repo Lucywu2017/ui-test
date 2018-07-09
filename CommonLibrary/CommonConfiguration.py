@@ -16,7 +16,7 @@ def get_current_time():
 
 
 def result_path():
-    path = r'E:\soft\webtest\TestResult' + '\\' + 'TestRun_' + datetime.now().strftime('%y%m%d')
+    path = r'E:\ui-test\TestResult' + '\\' + 'TestRun_' + datetime.now().strftime('%y%m%d')
     if not os.path.isdir(path):
         os.mkdir(path)
     return path
@@ -27,9 +27,10 @@ def time_diff(start_time, end_time):
     form = "%a %b %d %H:%M:%S %Y"
     return datetime.strptime(end_time, form) - datetime.strptime(start_time, form)
 
-def pic_path():
-    return '..\\TestResult\\screenshot\\' + now + '.png'
+# def pic_path():
+    # return '..\\TestResult\\screenshot\\' + now + '.png'
 
 
 if __name__ == '__main__':
-    print(get_identify_code('automation'))
+    # print(get_identify_code('automation'))
+    print("111")

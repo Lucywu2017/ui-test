@@ -22,10 +22,10 @@ list_1 = 'TestCasesRepository'
 alltestnames = creatsuitel(list_1)
 
 #取前面时间加入到测试报告文件名中
-now = time.strftime("%Y-%m-%M-%H_%M_%S", time.localtime(time.time()))
-filename = "report\\"+now+'result.html' #定义个报告存放路径，支持相对路径。
+now = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+filename = "TestResult\\"+now+'result.html' #定义个报告存放路径，支持相对路径。
 fp = open(filename, 'wb')
-runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Report_title', description='Report_description')
+runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'自动化测试报告', description=u'用例执行情况')
 
 if __name__ == "__main__":
     # 执行测试用例集并生成报告

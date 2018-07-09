@@ -27,7 +27,7 @@ class BasePage(object):
             driver = webdriver.Firefox(executable_path="..\\geckodriver.exe", log_path="..\\geckodriver.log")
             driver.maximize_window()
         elif browser == "chrome":
-            driver = webdriver.Chrome()
+            driver = webdriver.Chrome(executable_path="..\\chromedriver.exe")
         elif browser == "internet explorer" or browser == "ie":
             driver = webdriver.Ie()
         elif browser == "opera":
